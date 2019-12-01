@@ -7,17 +7,17 @@ from django.urls import reverse
 class sighting(models.Model):
     longitude = models.CharField(
         max_length=17,
-        help_text='Numerical longitude value',
+        help_text='(Numerical longitude value)',
     )
 
     latitude = models.CharField(
         max_length=17,
-        help_text='Numerical latitude value',
+        help_text='(Numerical latitude value)',
     )
 
     unique_squirrel_id = models.CharField(
         max_length=14,
-        help_text="Identification tag for each squirrel sightings. The tag is comprised of 'Hectare ID' + 'Shift' + 'Date(month+day)' + 'Hectare Squirrel Number'. E.g. 42C-AM-1007-02",
+        help_text="(Identification tag for each squirrel sightings. The tag is comprised of 'Hectare ID' + 'Shift' + 'Date(month+day)' + 'Hectare Squirrel Number'. E.g. 42C-AM-1007-02)",
         unique=True,
     )
 
@@ -36,7 +36,7 @@ class sighting(models.Model):
     
     date = models.CharField(
         max_length=8,
-        help_text='Concatenation of the sighting session month, day and year. E.g. 10142018',
+        help_text='(Concatenation of the sighting session month, day and year. E.g. 10142018)',
     )
 
     JUVENILE = 'juvenile'
@@ -47,7 +47,7 @@ class sighting(models.Model):
         (ADULT, 'Adult'),
     )
     
-    Age = models.CharField(
+    age = models.CharField(
         max_length=8,
         choices=AGE_CHOICES,
         null=True,
@@ -89,7 +89,7 @@ class sighting(models.Model):
     specific_location = models.TextField(
         max_length=255,
         blank=True,
-        help_text='Specific place where squirrel was sighted. E.g. crossing street',
+        help_text='(Specific place where squirrel was sighted. E.g. crossing street)',
     )
     
     running = models.BooleanField()
@@ -105,7 +105,7 @@ class sighting(models.Model):
     other_activities = models.TextField(
         max_length=255,
         blank=True,
-        help_text="Activities haven't been listed. E.g. digging",
+        help_text="(Activities haven't been listed. E.g. digging)",
     )
     
     kuks = models.BooleanField()
@@ -125,5 +125,5 @@ class sighting(models.Model):
     runs_from = models.BooleanField()
 
     def get_absolute_url(self):
-        return reverse('squirrel-detail', kwargs={'pk': self.pk})
+        return reverse('sighting-detail',kwargs={'id':self.unique_squirrel_id})
 

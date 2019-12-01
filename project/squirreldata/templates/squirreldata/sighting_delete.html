@@ -1,0 +1,7 @@
+{% block content %}
+<form action='.' method='DELETE'>
+        {% csrf_token %}
+	<h1>Do you want to delete sighting {{ obj.unique_squirrel_id }}?</h1>
+	<input type='submit' value='Yes' />
+</form>
+{% endblock %}

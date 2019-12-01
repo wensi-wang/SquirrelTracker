@@ -1,0 +1,12 @@
+<h1>Sighting List</h1>
+
+{% block content %}
+<a href="add/" class="button">ADD A NEW SIGHTING</a>
+
+{% for instance in object_list %}
+<p>
+	<h2><a href='{{ instance.get_absolute_url }}update/'>{{ instance.unique_squirrel_id }}</a></h2>
+	<a href="{{ instance.get_absolute_url }}delete/" class="button">DELETE</a>
+</p>
+{% endfor %}
+{% endblock %}
