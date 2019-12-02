@@ -59,3 +59,12 @@ def sighting_delete_view(request, delete_id):
    # }
    # return render(request, 'squirreldata/sighting_delete.html',context)
    # sighting.objects.filter(unique_squirrel_id=delete_id).delete()
+
+def maps(request):
+    queryset = sighting.objects.all()
+    context = {
+        'sightings': queryset
+        }
+    return render(request, 'squirreldata/default.html',context)
+    
+        
