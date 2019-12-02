@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse 
+from django.contrib import messages
 from .models import sighting
 from .forms import SquirrelForm
 
@@ -11,8 +12,8 @@ def sighting_list_view(request):
         }
     return render(request, 'squirreldata/sighting_list.html', context)
 
-def sighting_update_view(request,update_id):
-    obj = get_object_or_404(sighting,unique_squirrel_id=update_id)
+def sighting_update_view(request,id):
+    obj = get_object_or_404(sighting,unique_squirrel_id=id)
 
     form = SquirrelForm(request.POST or None, instance=obj)
     context = {
@@ -25,7 +26,7 @@ def sighting_update_view(request,update_id):
         context={
             'form':form
         }
-        return redirect('../')
+        return redirect('./')
     else:
         context={
             'form':form,
@@ -46,19 +47,15 @@ def sighting_create_view(request):
     }
     return render(request, 'squirreldata/sighting_create.html', context)
 
-def sighting_delete_view(request, delete_id):
-    obj = get_object_or_404(sighting,unique_squirrel_id=delete_id)
+def sighting_delete_view(request, id):
+    obj = get_object_or_404(sighting,unique_squirrel_id=id)
     obj.delete()
     messages.success(request, 'You successfully deleted the squirrel sighting data')
-    return redirect('../')
-   # if request.method == 'DELETE':
-   #     obj.delete()
-   #     return redirect('../')
-   # context = {
-   #     'obj': obj
-   # }
-   # return render(request, 'squirreldata/sighting_delete.html',context)
-   # sighting.objects.filter(unique_squirrel_id=delete_id).delete()
+    return redirect('./')
+    context = {
+        'obj': obj
+    }
+    return render(request, 'squirreldata/sighting_delete.html',context)
 
 def maps(request):
     queryset = sighting.objects.all()

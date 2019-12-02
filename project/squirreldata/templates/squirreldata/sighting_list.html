@@ -1,12 +1,70 @@
 <h1>Sighting List</h1>
 
 {% block content %}
-<a href="add/" class="button">ADD A NEW SIGHTING</a>
+<form action='' method='GET'>
 
+<style>
+table,table tr th, table tr td { border:1px solid black; }
+table { width: 200px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
+</style>
+
+<table>
+<tr>
+	<th>Longitude</th>
+	<th>Latitude</th>
+	<th>Unique Squirrel ID</th>
+	<th>Shift</th>
+	<th>Date</th>
+	<th>Age</th>
+	<th>Primary Fur Color</th>
+	<th>Location</th>
+	<th>Specific Location</th>
+	<th>Running</th>
+	<th>Chasing</th>
+	<th>Climbing</th>
+	<th>Eating</th>
+	<th>Foraging</th>
+	<th>Other Activities</th>
+	<th>Kuks</th>
+	<th>Quaas</th>
+	<th>Moans</th>
+	<th>Tail Flags</th>
+	<th>Tail Twitches</th>
+	<th>Approaches</th>
+	<th>Indifferent</th>
+	<th>Runs From</th>
+	<th>Edit</th>
+	<th>Add</th>
+</tr>
 {% for instance in object_list %}
-<p>
-	<h2><a href='{{ instance.get_absolute_url }}update/'>{{ instance.unique_squirrel_id }}</a></h2>
-	<a href="{{ instance.get_absolute_url }}delete/" class="button">DELETE</a>
-</p>
+<tr>
+	<td>{{ instance.longitude }}</td>
+	<td>{{ instance.latitude }}</td>
+	<td>{{ instance.unique_squirrel_id }}</td>
+	<td>{{ instance.shift }}</td>
+	<td>{{ instance.date }}</td>
+	<td>{{ instance.age }}</td>
+	<td>{{ instance.primary_fur_color }}</td>
+	<td>{{ instance.location }}</td>
+	<td>{{ instance.specific_location }}</td>
+	<td>{{ instance.running }}</td>
+	<td>{{ instance.chasing }}</td>
+	<td>{{ instance.climbing}}</td>
+	<td>{{ instance.eating }}</td>
+	<td>{{ instance.foraging }}</td>
+	<td>{{ instance.other_activities}}</td>
+	<td>{{ instance.kuks }}</td>
+	<td>{{ instance.quaas }}</td>
+	<td>{{ instance.moans }}</td>
+	<td>{{ instance.tail_flags }}</td>
+	<td>{{ instance.tail_twitches }}</td>
+	<td>{{ instance.approaches }}</td>
+	<td>{{ instance.indifferent }}</td>
+	<td>{{ instance.runs_from }}</td>
+	<td><a href='{{ instance.unique_squirrel_id }}'>Edit</a></td>
+	<td><a href='add/'>Add</a></td>
+</tr>
 {% endfor %}
+</table>
+</form>
 {% endblock %}
