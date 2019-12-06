@@ -20,9 +20,9 @@ from squirreldata.views import sighting_list_view,sighting_update_view,sighting_
 urlpatterns = [
     path('maps/',maps),
     path('sightings/',sighting_list_view),
-    path('sightings/<slug:id>',sighting_update_view,name='sighting-detail'),
+    path('sightings/<str:id>',sighting_update_view,name='sighting-detail'),
     path('sightings/add/',sighting_create_view), 
-    path('sightings/<slug:id>/delete/',sighting_delete_view,name='sighting-detail'),
+    path('sightings/<str:id>/delete',sighting_delete_view,name='sighting-detail'),
     path('sightings/stats/',sighting_stats_view),
     path('admin/', admin.site.urls),
 ]

@@ -17,6 +17,9 @@
 {{ form.as_p }}
 <input type="submit" value="Save Change"/>
 </form>
-
+<form action="/sightings/{{ form.instance.unique_squirrel_id}}/delete" method="POST">
+	{% csrf_token %}
+        <input type='submit' value='Delete' />
+</form>
 
 {% endblock %}

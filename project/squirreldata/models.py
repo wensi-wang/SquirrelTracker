@@ -21,8 +21,8 @@ class sighting(models.Model):
         unique=True,
     )
 
-    AM = 'am'
-    PM = 'pm'
+    AM = 'Am'
+    PM = 'Pm'
     
     SHITF_CHOICES = (
         (AM, 'AM'),
@@ -39,8 +39,8 @@ class sighting(models.Model):
         help_text='(Concatenation of the sighting session month, day and year. E.g. 10142018)',
     )
 
-    JUVENILE = 'juvenile'
-    ADULT = 'adult'
+    JUVENILE = 'Juvenile'
+    ADULT = 'Adult'
     
     AGE_CHOICES = (
         (JUVENILE, 'Juvenile'),
@@ -54,9 +54,9 @@ class sighting(models.Model):
         blank=True,
     )
     
-    GRAY = 'gray'
-    CINNAMON = 'cinnamon'
-    BLACK = 'black'
+    GRAY = 'Gray'
+    CINNAMON = 'Cinnamon'
+    BLACK = 'Black'
     
     PRIMARY_FUR_COLOR_CHOICES = (
         (GRAY, 'Gray'),
@@ -71,8 +71,8 @@ class sighting(models.Model):
         blank=True,
     )
     
-    GROUND_PLANE = 'ground plane'
-    ABOVE_GROUND = 'above ground'
+    GROUND_PLANE = 'Ground plane'
+    ABOVE_GROUND = 'Above ground'
     
     LOCATION_CHOICES = (
         (GROUND_PLANE, 'Ground Plane'),

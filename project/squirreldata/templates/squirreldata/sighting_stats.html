@@ -1,31 +1,105 @@
-<h1>Sighting List</h1>
+<h1>Sighting Stats</h1>
 
 {% block content %}
 <form action='' method='GET'>
 
-<style>
-table,table tr th, table tr td { border:1px solid black; }
-table { width: 200px; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
-</style>
+<h4>Total number of squirrel sightings:</h4>
+<li>Total number of squirrel sightings: {{ obj|length }}</li> 
 
-<table>
-<tr>
-        <th>Unique Squirrel ID</th>
-        <th>Age</th>
-        <th>Primary Fur Color</th>
-        <th>Location</th>
-        <th>Specific Location</th>
-</tr>
-{% for instance in object_list %}
-<tr>
-        <td>{{ instance.unique_squirrel_id }}</td>
-        <td>{{ instance.age }}</td>
-        <td>{{ instance.primary_fur_color }}</td>
-        <td>{{ instance.location }}</td>
-        <td>{{ instance.specific_location }}</td>
-</tr>
-{% endfor %}
-</table>
+
+<h4>Distribution of observation time:</h4>
+<li>Percentage of morning sightings:
+<script>
+var am = {{ am|length }};
+var obj = {{ obj|length }};
+document.write((am / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<li>Percentage of afternoon sightings: 
+<script>
+var pm = {{ pm|length }};
+var obj = {{ obj|length }};
+document.write((pm / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<h4>Distribution of squirrel age:</h4>
+<li>Percentage of juvenile squirrels being observed:
+<script>
+var juvenile = {{ juvenile|length }};
+var obj = {{ obj|length }};
+document.write((juvenile / obj).toFixed(4)*100);
+</script>	
+%</li>
+
+<li>Percentage of adult squirrels being observed: 
+<script>
+var adult = {{ adult|length }};
+var obj = {{ obj|length }};
+document.write((adult / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<h4>Distribution of squirrel primal fur color:</h4>
+<li>Percentage of gray-fur squirrels being observed:
+<script>
+var gray = {{ gray|length }};
+var obj = {{ obj|length }};
+document.write((gray / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<li>Percentage of cinnamon-fur squirrels being observed: 
+<script>
+var cinnamon = {{ cinnamon|length }};
+var obj = {{ obj|length }};
+document.write((cinnamon / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<li>Percentage of black-fur squirrels being observed: 
+<script>
+var black = {{ black|length }};
+var obj = {{ obj|length }};
+document.write((black / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<h4>Distribution of squirrel location when being observed:</h4>
+<li>Percentage of squirrels on ground when being observed:
+<script>
+var ground_plane = {{ ground_plane|length }};
+var obj = {{ obj|length }};
+document.write((ground_plane / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<li>Percentage of squirrels above ground when being observed:
+<script>
+var above_ground = {{ above_ground|length }};
+var obj = {{ obj|length }};
+document.write((above_ground / obj).toFixed(4)*100);
+</script>
+%</li>
+
+<h4>Squirrels' reaction when seeing people</h4>
+<li>
+<script>
+var tru = {{ tru|length }};
+var obj = {{ obj|length }};
+document.write((tru / obj).toFixed(4)*100);
+</script>
+% of squirrels run away from people</li>
+
+<li>
+<script>
+var fal = {{ fal|length }};
+var obj = {{ obj|length }};
+document.write((fal / obj).toFixed(4)*100);
+</script>
+% of squirrels don't run away from people</li>
+
 </form>
 {% endblock %}
                 
