@@ -21,8 +21,8 @@ class sighting(models.Model):
         unique=True,
     )
 
-    AM = 'Am'
-    PM = 'Pm'
+    AM = 'AM'
+    PM = 'PM'
     
     SHITF_CHOICES = (
         (AM, 'AM'),
