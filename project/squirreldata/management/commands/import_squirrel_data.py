@@ -22,7 +22,7 @@ class Command(BaseCommand):
                 sqr.unique_squirrel_id=row[2]
                 sqr.shift=row[4]
                 sqr.date=row[5]
-                sqr.Age=row[7]
+                sqr.age=row[7]
                 sqr.primary_fur_color=row[8]
                 sqr.location=row[12]
                 sqr.specific_location=row[14]
