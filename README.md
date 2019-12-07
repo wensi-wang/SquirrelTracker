@@ -2,6 +2,15 @@
 
 This is an application used to track all the known squirrels in Central Park. The initial dataset comes from the 2018 Central Park Squirrel Census, and this application allows you to add, update, and delete squirrel data.
 
+## Authors
+
+### Group 2, section 1
+* **Wensi Wang** - *ww2547*
+* **Wenyi Xu** - *wx2226* 
+
+### Our Server
+https://<your project id>.appspot.com/
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -41,7 +50,7 @@ located at: /map
 ```
 * Listing all squirrel sightings with linked to edit and add sightings.
 ```
-located at: /sightings
+located at: /sightings/
 ```
 * Updating a particular sighting
 ```
@@ -49,16 +58,16 @@ located at: /sightings/<unique-squirrel-id>
 ```
 * Creating a new sighting
 ```
-located at: /sightings/add
+located at: /sightings/add/
 The following information are required when reporting a squirrel sighting: Latitude, Longitude, Unique Squirrel ID, Shift, Date, Age, Primary Fur Color, Location, Specific Location, Running, Chasing, climbing, eating, foraging, other activities, kuks, quaas, moans, tail flags, tal twitches, approaches, indifferent, runs from.
 ```
 * Deleting a sighting
 ```
-located at: /sightings/<unique-squirrel-is>
+located at: /sightings/<unique-squirrel-is>/delete
 ```
 * Giving general stats about the sightings for you to decide, five of the attributes are listed.
 ```
-located at: /sightings/stats
+located at: /sightings/stats/
 ```
 
 ## Built With
@@ -66,11 +75,6 @@ located at: /sightings/stats
 * [Django](https://www.djangoproject.com/) - The web framework used
 * [OpenStreetMap](https://www.openstreetmap.org/) - The plugin used for our map
 * [Leaflet](https://leafletjs.com/) - The JavaScript library used to create an interactive maps
-
-## Authors
-
-* **Wensi Wang** - *Initial work*
-* **Wenyi Xu** - *Initial work* 
 
 ## Acknowledgments
 
