@@ -5,11 +5,12 @@ This is an application used to track all the known squirrels in Central Park. Th
 ## Authors
 
 ### Group 2, section 1
+#### UNIs: [ww2547,wx2226]
 * **Wensi Wang** - *ww2547*
 * **Wenyi Xu** - *wx2226* 
 
 ### Our Server
-https://<your project id>.appspot.com/
+https://tools-for-analytics-201909.appspot.com/
 
 ## Getting Started
 
@@ -46,7 +47,7 @@ Python manage.py export_squirrel_data /path/to/file.csv
 ### Functions of this application.
 * Showing a map that displays the location of the squirrel sightings on an [OpenStreets map](https://www.openstreetmap.org/about/). This uses the [leaflet](https://leafletjs.com/) library for plotting.
 ```
-located at: /map
+located at: /map/
 ```
 * Listing all squirrel sightings with linked to edit and add sightings.
 ```
