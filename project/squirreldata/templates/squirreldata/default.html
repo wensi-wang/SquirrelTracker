@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
    <head>
       <!-- Required meta tags -->
@@ -21,9 +22,15 @@
    </head>
  
    <body>
+      {% block content %}
+      <form action='' method='GET'>
+
       <h1>Squirrel Distribution</h1>
       
       <p>Here's a map of the central park in New York city.
+
+      </form>
+      {% endblock %}
 	  
       <div id="map" class="container-fluid h-100"></div>
  
@@ -53,6 +60,7 @@
             var marker = L.marker(point_lat_lon).addTo(map);
           {% endfor %}
       </script>
-      <script type='text/javascript' src='leaf-demo.js'></script>
+
    </body>
 </html>
+

@@ -18,7 +18,7 @@ from django.urls import path
 from squirreldata.views import sighting_list_view,sighting_update_view,sighting_create_view,sighting_delete_view,sighting_stats_view,maps
 
 urlpatterns = [
-    path('maps/',maps),
+    path('map/',maps),
     path('sightings/',sighting_list_view),
     path('sightings/<str:id>',sighting_update_view,name='sighting-detail'),
     path('sightings/add/',sighting_create_view), 
