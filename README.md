@@ -4,7 +4,7 @@ This is an application used to track all the known squirrels in Central Park. Th
 
 ## Authors
 
-### Group 2, section 1
+### Project Group 2, Section 1
 #### UNIs: [ww2547,wx2226]
 * **Wensi Wang** - *ww2547*
 * **Wenyi Xu** - *wx2226* 
