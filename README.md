@@ -1,6 +1,6 @@
 # Squirrel Tracker
 
-This is an application used to track all the known squirrels in Central Park. The initial dataset comes from the 2018 Central Park Squirrel Census, and this application allows you to add, update, and delete squirrel data.
+This is an application used to track all the observed squirrels in Central Park. The initial dataset comes from the 2018 Central Park Squirrel Census, and this application allows you to add, update, and delete squirrel data.
 
 ## Authors
 
