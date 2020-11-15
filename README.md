@@ -6,8 +6,8 @@ This is an application used to track all the observed squirrels in Central Park.
 
 ### Project Group 2, Section 1
 #### UNIs: [ww2547,wx2226]
-* **Wensi Wang** - *ww2547*
 * **Wenyi Xu** - *wx2226* 
+* **Wensi Wang** - *ww2547*
 
 ### Our Server
 https://tools-for-analytics-201909.appspot.com/
